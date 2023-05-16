@@ -12,5 +12,8 @@ class ConnexionStep {
     checkError(message) {
         connexionPage.getError().should('have.text',message)
     }
+    clickNewUser(){
+        connexionPage.getButtonInscription().click()
+    }
 }
 export default ConnexionStep

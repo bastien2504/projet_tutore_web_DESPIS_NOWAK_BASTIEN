@@ -5,7 +5,7 @@ const homePage=new HomePage();
 
 class HomeStep {
     verifierNomPrenom(data){
-        homePage.getButtonMenu().should('have.text'," Bienvenue "+data.nom +" "+data.prenom+ " ")
+        homePage.getButtonMenu().should('have.text'," Bienvenue "+data.nom +" "+data.prenom+" ")
     }
     
 }

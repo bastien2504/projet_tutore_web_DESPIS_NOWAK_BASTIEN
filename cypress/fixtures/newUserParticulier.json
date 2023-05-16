@@ -1,0 +1,33 @@
+{
+    "type": "1",
+    "username": "auto_rand@gmail.com",
+    "prenom": "NOM",
+    "nom": "PRENOM",
+    "password": "Sogeti33600",
+    "confirmPassword": "Sogeti33600",
+    "adresse": "adresse",
+    "ville": {
+      "id": 4,
+      "nom": "Nice",
+      "pays": {
+        "id": 2,
+        "nom": "France",
+        "continent": "europe"
+      }
+    },
+    "codePostal": "00000",
+    "passport": "123456",
+    "cin": "123456",
+    "dateNaissance": "2000-01-01",
+    "tel": "010203040506",
+    "siret": "",
+    "nombreSalarie": "",
+    "nomConjoint": "",
+    "prenomConjoint": "",
+    "dateNaissanceConjoint": "",
+    "raisonSociale": "",
+    "roles": [
+      "ROLE_CLIENT"
+    ],
+    "active": false
+  }
