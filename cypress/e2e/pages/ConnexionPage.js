@@ -14,6 +14,9 @@ class ConnexionPage {
     getButtonInscription(){
         return cy.xpath("//a[@href='/register']")
     }
+    checkText(){
+        return cy.xpath('//label[@for="username"]')
+    }
 }
 export default ConnexionPage
 require('@cypress/xpath')

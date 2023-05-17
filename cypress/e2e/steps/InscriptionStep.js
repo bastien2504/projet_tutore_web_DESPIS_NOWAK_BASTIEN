@@ -22,7 +22,18 @@ class InscriptionStep {
         inscriptionPage.getTelephone().type(data.tel)
         inscriptionPage.getPassword().type(data.password)
         inscriptionPage.getConfirmPassword().type(data.confirmPassword)
-
+        if(data.type == '1'){
+            inscriptionPage.getNomConjoint().type(data.nomConjoint)
+            inscriptionPage.getPrenomConjoint().type(data.prenomConjoint)
+            inscriptionPage.getDateNaissanceConjoint().type(data.dateNaissanceConjoint)
+            cy.wait(2000)
+            inscriptionPage.getButtonValidation().click()
+        } else if (data.type =='0') {
+            inscriptionPage.getRaisonSociale().select(data.raisonSociale)
+            inscriptionPage.getSiret().type(data.siret)
+            inscriptionPage.getNombreSalarie().select(data.nombreSalarie) 
+            inscriptionPage.getButtonValidation().click()
+        }      
     }
 }
 export default InscriptionStep

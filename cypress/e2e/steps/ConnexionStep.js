@@ -5,6 +5,7 @@ const connexionPage=new ConnexionPage();
 
 class ConnexionStep {
     setLogin(username, password) {
+        cy.log(username)
         connexionPage.getUserName().type(username)
         connexionPage.getPassword().type(password)
         connexionPage.getButtonLogin().click()
@@ -14,6 +15,10 @@ class ConnexionStep {
     }
     clickNewUser(){
         connexionPage.getButtonInscription().click()
+    }
+    checkOnLoginPage(message){
+        cy.wait(4000)
+        connexionPage.checkText().should('have.text',message)
     }
 }
 export default ConnexionStep

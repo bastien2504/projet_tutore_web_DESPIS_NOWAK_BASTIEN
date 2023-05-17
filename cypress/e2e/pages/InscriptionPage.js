@@ -45,7 +45,27 @@ class InscriptionPage {
     getConfirmPassword(){
         return cy.xpath("//input[@formcontrolname='confirmPassword']").first()
     }
-
+    getRaisonSociale(){
+        return cy.xpath("//select[@formcontrolname='raisonSociale']").first()
+    }
+    getSiret(){
+        return cy.xpath("//input[@formcontrolname='siret']").first()
+    }
+    getNombreSalarie(){
+        return cy.xpath("//select[@formcontrolname='nombreSalarie']").first()
+    }
+    getNomConjoint(){
+        return cy.xpath("//input[@formcontrolname='nomConjoint']")
+    }
+    getPrenomConjoint(){
+        return cy.xpath("//input[@formcontrolname='prenomConjoint']")
+    }
+    getDateNaissanceConjoint(){
+        return cy.xpath("//input[@formcontrolname='dateNaissanceConjoint']")
+    }
+    getButtonValidation(){
+        return cy.xpath('//button[contains(.,"Créer votre compte")]').first()
+    }
 }
 export default InscriptionPage
 require('@cypress/xpath')
