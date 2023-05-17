@@ -17,7 +17,6 @@ class ConnexionStep {
         connexionPage.getButtonInscription().click()
     }
     checkOnLoginPage(message){
-        cy.wait(4000)
         connexionPage.checkText().should('have.text',message)
     }
 }
