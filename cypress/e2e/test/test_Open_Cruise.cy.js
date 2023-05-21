@@ -9,7 +9,7 @@ cy.fixture('userConnexionOk.json', 'utf8').as('User')
 */
     
     it('Connexion avec un user admin, Cas passant', () => {
-            cy.fixture('adminOk.json', 'utf8').as('admin')
+            cy.fixture('admin'+Cypress.env('fileOption')+'.json', 'utf8').as('admin')
             cy.get('@admin').then((data) => {
             const connexionStep = new ConnexionStep();
             const homeStep = new HomeStep();
@@ -19,7 +19,7 @@ cy.fixture('userConnexionOk.json', 'utf8').as('User')
         });
     })
     it('Connexion avec un user, Cas passant', () => {
-            cy.fixture('userConnexionOk.json', 'utf8').as('User')
+            cy.fixture('userConnexion'+Cypress.env('fileOption')+'.json', 'utf8').as('User')
             cy.get('@User').then((data) => {
             const connexionStep = new ConnexionStep();
             const homeStep = new HomeStep();
@@ -52,7 +52,7 @@ cy.fixture('userConnexionOk.json', 'utf8').as('User')
             inscriptionStep.verificationArriverFormulaire()
             inscriptionStep.setNewUser(data)
             connexionStep.checkOnLoginPage('Identifiant')
-            cy.fixture('adminOk.json', 'utf8').as('admin')
+            cy.fixture('admin'+Cypress.env('fileOption')+'.json', 'utf8').as('admin')
             cy.get('@admin').then((data2) => {
                 connexionStep.setLogin(data2.username, data2.password)
                 homeStep.verifierNomPrenom(data2);
@@ -81,7 +81,7 @@ cy.fixture('userConnexionOk.json', 'utf8').as('User')
             inscriptionStep.verificationArriverFormulaire()
             inscriptionStep.setNewUser(data)
             connexionStep.checkOnLoginPage('Identifiant')
-            cy.fixture('adminOk.json', 'utf8').as('admin')
+            cy.fixture('admin'+Cypress.env('fileOption')+'.json', 'utf8').as('admin')
             cy.get('@admin').then((data2) => {
                 connexionStep.setLogin(data2.username, data2.password)
                 homeStep.verifierNomPrenom(data2);
@@ -112,11 +112,11 @@ cy.fixture('userConnexionOk.json', 'utf8').as('User')
             connexionStep.checkOnLoginPage('Identifiant')
             connexionStep.setLogin(data.username, data.password)
             connexionStep.checkError(' votre compte est bloqué ')
-
         });
     })
     it('Recherche une croisiere par un mots clées est affiche aux moins un resultat', () => {
-        cy.fixture('userConnexionOk.json', 'utf8').as('User')
+        // tag: recherche
+        cy.fixture('userConnexion'+Cypress.env('fileOption')+'.json', 'utf8').as('User')
         cy.get('@User').then((data) => {
             const connexionStep = new ConnexionStep();
             const homeStep = new HomeStep();
@@ -128,7 +128,8 @@ cy.fixture('userConnexionOk.json', 'utf8').as('User')
         });
     })
     it('Recherche une croisiere par un mots clées est affiche aucun resultat', () => {
-        cy.fixture('userConnexionOk.json', 'utf8').as('User')
+        // tag: recherche
+        cy.fixture('userConnexion'+Cypress.env('fileOption')+'.json', 'utf8').as('User')
         cy.get('@User').then((data) => {
             const connexionStep = new ConnexionStep();
             const homeStep = new HomeStep();
@@ -139,4 +140,5 @@ cy.fixture('userConnexionOk.json', 'utf8').as('User')
             homeStep.verifierNonPresenceMotCles('lapin');
     });
   })
+
 })

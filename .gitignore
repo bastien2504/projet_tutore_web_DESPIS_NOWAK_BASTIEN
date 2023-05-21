@@ -1,2 +1,2 @@
 /cypress/fixtures/adminOk.json
-/cypress/fixtures/adminKo.json
+#/cypress/fixtures/adminKo.json
