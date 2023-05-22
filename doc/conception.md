@@ -81,8 +81,16 @@
     <td class="tg-0pky">Inscription<br>Connexion</td>
     <td class="tg-0pky">Information necessaires à la création du compte professionel</td>
   </tr>
-  <tr>
+   <tr>
     <td class="tg-0pky">007</td>
+    <td class="tg-0pky">Inscription compte professionel Avec 2 représentant</td>
+    <td class="tg-0pky">Inscription d'un nouveau compte professionel avec un représentant</td>
+    <td class="tg-0pky">Test  Passant</td>
+    <td class="tg-0pky">Inscription</td>
+    <td class="tg-0pky">Information necessaires à la création du compte professionel</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">008</td>
     <td class="tg-0pky">Rechercher une nouvelle croisiere par mot clées</td>
     <td class="tg-0pky">Recherche une croisiere par un mots clées est affiche un resultat</td>
     <td class="tg-0pky">Test Passant</td>
@@ -90,7 +98,7 @@
     <td class="tg-0pky"> Compte User Utiliser et Mots clées à utiliser dans la recherche valide</td>
   </tr>
   <tr>
-    <td class="tg-0pky">008</td>
+    <td class="tg-0pky">009</td>
     <td class="tg-0pky">Rechercher une nouvelle croisiere par mot clées</td>
     <td class="tg-0pky">Recherche une croisiere par un mots clées est n'affiche aucun resultat</td>
     <td class="tg-0pky">Test Non Passant</td>

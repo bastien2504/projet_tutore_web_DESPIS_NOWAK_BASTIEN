@@ -7,7 +7,6 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
   },
-  reporter: 'reporters/custom.js',
   env: {
     fileOption: ''
   }

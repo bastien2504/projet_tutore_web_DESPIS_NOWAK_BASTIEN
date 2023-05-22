@@ -1,6 +1,7 @@
 {
     "type": "1",
     "username": "auto_rand@gmail.com",
+    "username_remplacant": "auto_rand@gmail.com",
     "prenom": "NOM",
     "nom": "PRENOM",
     "password": "Sogeti33600",

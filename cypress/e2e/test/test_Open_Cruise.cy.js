@@ -3,10 +3,6 @@ import HomeStep from '../steps/HomeStep';
 import InscriptionStep from '../steps/InscriptionStep';
 
 describe('Test Open Cruise', () => {
-
-/*cy.fixture('adminKo.json', 'utf8').as('admin')
-cy.fixture('userConnexionOk.json', 'utf8').as('User')
-*/
     
     it('Connexion avec un user admin, Cas passant', () => {
             cy.fixture('admin'+Cypress.env('fileOption')+'.json', 'utf8').as('admin')
@@ -50,7 +46,10 @@ cy.fixture('userConnexionOk.json', 'utf8').as('User')
             cy.visit('/login');
             connexionStep.clickNewUser()
             inscriptionStep.verificationArriverFormulaire()
-            inscriptionStep.setNewUser(data)
+            inscriptionStep.setNewUserCommonInfo(data,1)
+            inscriptionStep.setNewUserCasDiverse(data,1)
+            inscriptionStep.validateFormulaire(1)
+
             connexionStep.checkOnLoginPage('Identifiant')
             cy.fixture('admin'+Cypress.env('fileOption')+'.json', 'utf8').as('admin')
             cy.get('@admin').then((data2) => {
@@ -79,7 +78,10 @@ cy.fixture('userConnexionOk.json', 'utf8').as('User')
             cy.visit('/login');
             connexionStep.clickNewUser()
             inscriptionStep.verificationArriverFormulaire()
-            inscriptionStep.setNewUser(data)
+            inscriptionStep.setNewUserCommonInfo(data,1)
+            inscriptionStep.setNewUserCasDiverse(data,1)
+            inscriptionStep.validateFormulaire(1)
+
             connexionStep.checkOnLoginPage('Identifiant')
             cy.fixture('admin'+Cypress.env('fileOption')+'.json', 'utf8').as('admin')
             cy.get('@admin').then((data2) => {
@@ -104,19 +106,52 @@ cy.fixture('userConnexionOk.json', 'utf8').as('User')
             const inscriptionStep = new InscriptionStep()
             const homeStep = new HomeStep()
             data.username = data.username.replace('auto_rand', random)
-            data.type = '0'
+            data.type = '1'
             cy.visit('/login');
             connexionStep.clickNewUser()
             inscriptionStep.verificationArriverFormulaire()
-            inscriptionStep.setNewUser(data)
+            inscriptionStep.setNewUserCommonInfo(data,1)
+            inscriptionStep.setNewUserCasDiverse(data,1)
+            inscriptionStep.validateFormulaire(1)
+
             connexionStep.checkOnLoginPage('Identifiant')
             connexionStep.setLogin(data.username, data.password)
             connexionStep.checkError(' votre compte est bloqué ')
         });
     })
+    it('Inscription compte professionel Avec 2 représentant', () => {
+        cy.fixture('newUserParticulier.json', 'utf8').as('newUser')
+        cy.get('@newUser').then((data) => {
+            const random1 = '1' + Math.random().toString().substr(2, 9);
+            const random2 = '2' + Math.random().toString().substr(2, 9);
+
+            const connexionStep = new ConnexionStep();
+            const inscriptionStep = new InscriptionStep()
+            const homeStep = new HomeStep()
+            data.username = data.username.replace('auto_rand', random1)
+            data.username_remplacant = data.username_remplacant.replace('auto_rand', random2)
+            data.type = '0'
+            cy.visit('/login');
+            connexionStep.clickNewUser()
+            inscriptionStep.verificationArriverFormulaire()
+            inscriptionStep.setNewUserCommonInfo(data,1)
+            inscriptionStep.setNewUserCasDiverse(data,1)
+            inscriptionStep.ouvrirFormSecondReprésentant()
+            //inscriptionStep.verificationArriverFormSecondReprsentant()
+            inscriptionStep.setNewUserCommonInfo(data,2)
+            inscriptionStep.setNewUserCasDiverse(data,2)
+            inscriptionStep.validateFormulaire(2)
+
+            inscriptionStep.validateFormulaire(1)
+
+            connexionStep.checkOnLoginPage('Identifiant')
+            connexionStep.setLogin(data.username, data.password)
+            connexionStep.checkError(' votre compte est bloqué ')
+            
+        });
+    })
     it('Recherche une croisiere par un mots clées est affiche aux moins un resultat', () => {
-        // tag: recherche
-        cy.fixture('userConnexion'+Cypress.env('fileOption')+'.json', 'utf8').as('User')
+        cy.fixture('admin'+Cypress.env('fileOption')+'.json', 'utf8').as('User')
         cy.get('@User').then((data) => {
             const connexionStep = new ConnexionStep();
             const homeStep = new HomeStep();
@@ -128,8 +163,7 @@ cy.fixture('userConnexionOk.json', 'utf8').as('User')
         });
     })
     it('Recherche une croisiere par un mots clées est affiche aucun resultat', () => {
-        // tag: recherche
-        cy.fixture('userConnexion'+Cypress.env('fileOption')+'.json', 'utf8').as('User')
+        cy.fixture('admin'+Cypress.env('fileOption')+'.json', 'utf8').as('User')
         cy.get('@User').then((data) => {
             const connexionStep = new ConnexionStep();
             const homeStep = new HomeStep();

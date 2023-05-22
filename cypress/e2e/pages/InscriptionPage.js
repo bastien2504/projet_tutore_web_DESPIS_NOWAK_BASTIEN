@@ -6,53 +6,53 @@ class InscriptionPage {
     selectTypeCompte(){
         return cy.xpath('//input[@type="radio"]')
     }
-    getNom(){
-        return cy.xpath('//input[@formcontrolname="prenom"]').first()
+    getNom(int){
+        return cy.xpath('(//input[@formcontrolname="prenom"])['+int+']')
     }
-    getPrenom(){
-        return cy.xpath('//input[@formcontrolname="nom"]').first()
+    getPrenom(int){
+        return cy.xpath('(//input[@formcontrolname="nom"])['+int+']')
     }
-    getDateNaissance(){
-        return cy.xpath("//input[@formcontrolname='dateNaissance']").first()
+    getDateNaissance(int){
+        return cy.xpath('(//input[@formcontrolname="dateNaissance"])['+int+']')
     }
-    getAdresse(){
-        return cy.xpath("//input[@formcontrolname='adresse']").first()
+    getAdresse(int){
+        return cy.xpath('(//input[@formcontrolname="adresse"])['+int+']')
     }
-    getPays(){
-        return cy.xpath("//select[@formcontrolname='currentPays']").first()
+    getPays(int){
+        return cy.xpath('(//select[@formcontrolname="currentPays"])['+int+']')
     }
-    getVille(){
-        return cy.xpath("//select[@formcontrolname='ville']").first()
+    getVille(int){
+        return cy.xpath('(//select[@formcontrolname="ville"])['+int+']')
     }
-    getCodePostal(){
-        return cy.xpath("//input[@formcontrolname='codePostal']").first()
+    getCodePostal(int){
+        return cy.xpath('(//input[@formcontrolname="codePostal"])['+int+']')
     }
-    getPasseport(){
-        return cy.xpath("//input[@formcontrolname='passport']").first()
+    getPasseport(int){
+        return cy.xpath('(//input[@formcontrolname="passport"])['+int+']')
     }
-    getCarteIdentite(){
-        return cy.xpath("//input[@formcontrolname='cin']").first()
+    getCarteIdentite(int){
+        return cy.xpath('(//input[@formcontrolname="cin"])['+int+']')
     }
-    getUsername(){
-        return cy.xpath("//input[@formcontrolname='username']").first()
+    getUsername(int){
+        return cy.xpath('(//input[@formcontrolname="username"])['+int+']')
     }
-    getTelephone(){
-        return cy.xpath("//input[@formcontrolname='tel']").first()
+    getTelephone(int){
+        return cy.xpath('(//input[@formcontrolname="tel"])['+int+']')
     }
-    getPassword(){
-        return cy.xpath("//input[@formcontrolname='password']").first()
+    getPassword(int){
+        return cy.xpath('(//input[@formcontrolname="password"])['+int+']')
     }
-    getConfirmPassword(){
-        return cy.xpath("//input[@formcontrolname='confirmPassword']").first()
+    getConfirmPassword(int){
+        return cy.xpath('(//input[@formcontrolname="confirmPassword"])['+int+']')
     }
-    getRaisonSociale(){
-        return cy.xpath("//select[@formcontrolname='raisonSociale']").first()
+    getRaisonSociale(int){
+        return cy.xpath('(//select[@formcontrolname="raisonSociale"])['+int+']')
     }
-    getSiret(){
-        return cy.xpath("//input[@formcontrolname='siret']").first()
+    getSiret(int){
+        return cy.xpath('(//input[@formcontrolname="siret"])['+int+']')
     }
-    getNombreSalarie(){
-        return cy.xpath("//select[@formcontrolname='nombreSalarie']").first()
+    getNombreSalarie(int){
+        return cy.xpath('(//select[@formcontrolname="nombreSalarie"])['+int+']')
     }
     getNomConjoint(){
         return cy.xpath("//input[@formcontrolname='nomConjoint']")
@@ -63,8 +63,14 @@ class InscriptionPage {
     getDateNaissanceConjoint(){
         return cy.xpath("//input[@formcontrolname='dateNaissanceConjoint']")
     }
-    getButtonValidation(){
-        return cy.xpath('//button[contains(.,"Créer votre compte")]').first()
+    getButtonValidation(int){
+        return cy.xpath('(//button[contains(.,"Créer votre compte")])['+int+']')
+    }
+    getCaseSeconReprésentant(){
+        return cy.xpath('//input[@type="checkbox"]')
+    }
+    getTitreModal(){
+        return cy.xpath('//h5')
     }
 }
 export default InscriptionPage
