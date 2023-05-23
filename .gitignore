@@ -1,2 +1,2 @@
-cypress/fixtures/adminko.json
-cypress/fixtures/adminok.json
+./cypress/fixtures/adminko.json
+./cypress/fixtures/adminok.json

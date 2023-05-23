@@ -9,7 +9,10 @@ module.exports = defineConfig({
   },
   env: {
     fileOption: ''
+  },
+  reporter: "cypress-multi-reporters",
+  reporterOptions: {
+    configFile: "reporter-config.json",
   }
-  
   
 });

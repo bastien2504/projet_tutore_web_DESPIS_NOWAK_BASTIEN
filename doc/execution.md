@@ -20,7 +20,7 @@
 - Pour le trosieme test, il s'agit de se connecter en tant qu'utilisateur normal mais avec identifiant invalide, il n'y a pas eu de probleme par rapport aux resultat attendue
 
 - Pour le 4 test, il s'agit de vouloir créer un compte particulier, d'approuver se nouveaux compte puis de s'y connecter.
-  -  Anomalie trouver : 
+  -  Anomalie trouvée : 
      -  **Le bouton de validation du formulaire de saisie ne marche pas donc impossible de créer le nouveaux user**.
     ![alt text](../doc/Test%20Open%20Cruise%20--%20Inscription%20compte%20particulier%20et%20Connexion%20du%20compte%20(failed).png))
   - Le reste de etapes n'a pas pu être tester car il necaire d'avoir un nouveau compte pour test les etapes suivant.
