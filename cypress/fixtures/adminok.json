@@ -1,6 +1,6 @@
 {
-    "username": "",
-    "password": "",
-    "nom": "",
-    "prenom": ""
+    "username": "admin@test.com",
+    "password": "Sogeti33",
+    "nom": "ADMIN",
+    "prenom": "TEST"
 }
